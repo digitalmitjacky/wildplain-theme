@@ -1,0 +1,21 @@
+{
+    "sections": {
+          "hero": {
+                  "type": "hero",
+                  "settings": {
+                            "badge_text": "Western Fashion aus Österreich",
+                            "heading": "Live Wild\nStay Plain",
+                            "subheading": "Authentische Western-Streetwear – handverlesen, unisex, made with passion. Entdecke unsere neuesten Kollektionen.",
+                            "cta_label": "Zu den Produkten →",
+                            "cta_url": "/collections/all",
+                            "cta2_label": "Unsere Story",
+                            "cta2_url": "/pages/uber-uns"
+                  }
+          },
+          "featured-products": {
+                  "type": "featured-products",
+                  "settings": {}
+          }
+    },
+    "order": ["hero", "featured-products"]
+}
