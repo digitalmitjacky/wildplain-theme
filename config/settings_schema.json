@@ -1,0 +1,50 @@
+[
+    {
+          "name": "theme_info",
+          "theme_name": "Wildplain",
+          "theme_version": "1.0.0",
+          "theme_author": "Wildplain",
+          "theme_documentation_url": "https://wildplain.at",
+          "theme_support_url": "https://wildplain.at/pages/contact"
+    },
+    {
+          "name": "Shop-Einstellungen",
+          "settings": [
+                  {
+                            "type": "checkbox",
+                            "id": "show_announcement",
+                            "label": "Ankündigungsleiste anzeigen",
+                            "default": true
+                  },
+                  {
+                            "type": "text",
+                            "id": "announcement_text",
+                            "label": "Ankündigungstext",
+                            "default": "🤠 KOSTENLOSER VERSAND auf alle Bestellungen"
+                  }
+          ]
+    },
+    {
+          "name": "Farben",
+          "settings": [
+                  {
+                            "type": "color",
+                            "id": "color_sand",
+                            "label": "Hauptfarbe (Sand/Orange)",
+                            "default": "#C4956A"
+                  },
+                  {
+                            "type": "color",
+                            "id": "color_dark",
+                            "label": "Dunkelfarbe",
+                            "default": "#1A1008"
+                  },
+                  {
+                            "type": "color",
+                            "id": "color_off_white",
+                            "label": "Hintergrundfarbe Hell",
+                            "default": "#FAF7F2"
+                  }
+          ]
+    }
+]
