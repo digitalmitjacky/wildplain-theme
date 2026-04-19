@@ -1,0 +1,35 @@
+<section class="hero" aria-label="Hero">
+    <div class="hero-bg" role="img" aria-label="{{ section.settings.image_alt }}">
+  {%- if section.settings.image != blank -%}
+  {{ section.settings.image | image_url: width: 1920 | image_tag: loading: 'eager', class: 'hero-img' }}
+{%- endif -%}
+  </div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <span class="hero-badge">{{ section.settings.badge_text }}</span>
+      <h1>{{ section.settings.heading | newline_to_br }}</h1>
+      <p>{{ section.settings.subheading }}</p>
+      <div class="hero-cta-group">
+        <a href="{{ section.settings.cta_url }}" class="btn btn-primary">{{ section.settings.cta_label }}</a>
+        <a href="{{ section.settings.cta2_url }}" class="btn btn-outline">{{ section.settings.cta2_label }}</a>
+      </div>
+    </div>
+  </section>
+
+  {% schema %}
+{
+  "name": "Hero",
+      "settings": [
+    { "type": "image_picker", "id": "image", "label": "Hero-Bild" },
+{ "type": "text", "id": "image_alt", "label": "Bild Alternativtext", "default": "Wildplain Hero" },
+{ "type": "text", "id": "badge_text", "label": "Badge Text", "default": "Western Fashion aus Österreich" },
+{ "type": "textarea", "id": "heading", "label": "Überschrift", "default": "Live Wild\nStay Plain" },
+{ "type": "textarea", "id": "subheading", "label": "Untertext", "default": "Authentische Western-Streetwear – handverlesen, unisex, made with passion." },
+{ "type": "text", "id": "cta_label", "label": "Button 1 Text", "default": "Zu den Produkten →" },
+{ "type": "url", "id": "cta_url", "label": "Button 1 Link" },
+{ "type": "text", "id": "cta2_label", "label": "Button 2 Text", "default": "Unsere Story" },
+{ "type": "url", "id": "cta2_url", "label": "Button 2 Link" }
+  ],
+  "presets": [{ "name": "Hero" }]
+}
+{% endschema %}
