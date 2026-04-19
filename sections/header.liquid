@@ -1,0 +1,49 @@
+<header class="site-header" role="banner">
+    <div class="header-inner">
+      <a href="{{ routes.root_url }}" class="site-logo" aria-label="{{ shop.name }} Startseite">
+        Wild<span>plain</span>
+      </a>
+      <nav class="main-nav" aria-label="Hauptnavigation">
+        <a href="{{ routes.root_url }}">Home</a>
+        <a href="{{ routes.collections_url }}">Produkte</a>
+        <a href="{{ routes.collections_url }}/hoodies">Hoodies</a>
+        <a href="{{ routes.collections_url }}/shirts">Shirts</a>
+        <a href="{{ routes.collections_url }}/pullover">Pullover</a>
+        <a href="/pages/uber-uns">Über uns</a>
+        <a href="{{ routes.contact_url }}">Kontakt</a>
+        <a href="/pages/faq">FAQ</a>
+      </nav>
+      <div class="header-actions">
+        <button class="search-toggle" aria-label="Suche öffnen" aria-expanded="false">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        </button>
+        <a href="{{ routes.account_url }}" aria-label="Mein Konto">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </a>
+        <a href="{{ routes.cart_url }}" class="cart-icon" aria-label="Warenkorb">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          <span class="cart-count" aria-live="polite">{{ cart.item_count }}</span>
+        </a>
+        <button class="hamburger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobile-menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <nav id="mobile-menu" class="mobile-menu" aria-label="Mobile Navigation" hidden>
+      <a href="{{ routes.root_url }}">Home</a>
+      <a href="{{ routes.collections_url }}">Alle Produkte</a>
+      <a href="{{ routes.collections_url }}/hoodies">Hoodies</a>
+      <a href="{{ routes.collections_url }}/shirts">Shirts</a>
+      <a href="{{ routes.collections_url }}/pullover">Pullover</a>
+      <a href="/pages/uber-uns">Über uns</a>
+      <a href="{{ routes.contact_url }}">Kontakt</a>
+      <a href="/pages/faq">FAQ</a>
+    </nav>
+  </header>
+
+  {% schema %}
+  {
+    "name": "Header",
+    "settings": []
+  }
+  {% endschema %}
