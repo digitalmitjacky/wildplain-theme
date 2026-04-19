@@ -1,0 +1,10 @@
+{
+    "current": {
+          "show_announcement": true,
+          "announcement_text": "🤠 KOSTENLOSER VERSAND auf alle Bestellungen",
+          "color_sand": "#C4956A",
+          "color_dark": "#1A1008",
+          "color_off_white": "#FAF7F2"
+    },
+    "presets": {}
+}
