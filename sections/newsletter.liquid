@@ -1,0 +1,35 @@
+<section class="newsletter-section">
+  <div class="newsletter-inner">
+      <p class="eyebrow">{{ section.settings.eyebrow }}</p>
+          <h2>{{ section.settings.heading }}</h2>
+              <p>{{ section.settings.subtext }}</p>
+                  {%- form 'customer', class: 'newsletter-form' -%}
+                        <input type="hidden" name="contact[tags]" value="newsletter" />
+                              <input
+                                      class="newsletter-input"
+                                              type="email"
+                                                      name="contact[email]"
+                                                              placeholder="{{ section.settings.placeholder }}"
+                                                                      aria-label="{{ section.settings.placeholder }}"
+                                                                              required
+                                                                                    />
+                                                                                          <button type="submit" class="newsletter-btn">{{ section.settings.button_label }}</button>
+                                                                                              {%- endform -%}
+                                                                                                  <p class="newsletter-note">{{ section.settings.note }}</p>
+                                                                                                    </div>
+                                                                                                    </section>
+                                                                                                    
+                                                                                                    {% schema %}
+                                                                                                    {
+                                                                                                      "name": "Newsletter",
+                                                                                                        "settings": [
+                                                                                                            { "type": "text", "id": "eyebrow", "label": "Eyebrow Text", "default": "Exklusiv für dich" },
+                                                                                                                { "type": "text", "id": "heading", "label": "Überschrift", "default": "10% Willkommensrabatt" },
+                                                                                                                    { "type": "textarea", "id": "subtext", "label": "Untertext", "default": "Trage dich für unseren Newsletter ein und sicher dir nochmal zusätzlich 10% Rabatt on Top!" },
+                                                                                                                        { "type": "text", "id": "placeholder", "label": "E-Mail Platzhalter", "default": "Deine E-Mail-Adresse" },
+                                                                                                                            { "type": "text", "id": "button_label", "label": "Button Text", "default": "Jetzt sichern" },
+                                                                                                                                { "type": "text", "id": "note", "label": "Hinweistext", "default": "Du kannst dich jederzeit wieder abmelden." }
+                                                                                                                                  ],
+                                                                                                                                    "presets": [{ "name": "Newsletter" }]
+                                                                                                                                    }
+                                                                                                                                    {% endschema %}
