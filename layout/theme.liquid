@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="{{ request.locale.iso_code }}">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  {%- if page_title == blank -%}
+    <title>{{ shop.name }} | Western Fashion aus Österreich</title>
+  {%- else -%}
+    <title>{{ page_title }} – {{ shop.name }}</title>
+  {%- endif -%}
+  {%- if page_description -%}
+    <meta name="description" content="{{ page_description | escape }}" />
+  {%- else -%}
+    <meta name="description" content="{{ shop.name }} – Dein österreichischer Online-Shop für Western-inspired Fashion. Hoodies, Shirts und Pullover im Cowboy-Style. Kostenloser Versand." />
+  {%- endif -%}
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="{{ canonical_url }}" />
+  <meta property="og:site_name" content="{{ shop.name }}" />
+  <meta property="og:url" content="{{ canonical_url }}" />
+  <meta property="og:title" content="{{ page_title | default: shop.name }}" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="{{ request.locale.iso_code }}" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ClothingStore",
+    "name": "{{ shop.name | escape }}",
+    "url": "{{ shop.url }}",
+    "description": "Österreichischer Online-Shop für Western-inspired Fashion"
+  }
+  </script>
+  {{ content_for_header }}
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  {{ 'wildplain.css' | asset_url | stylesheet_tag }}
+</head>
+<body>
+  <a href="#MainContent" class="skip-link">Zum Hauptinhalt springen</a>
+  {%- if settings.show_announcement and settings.announcement_text != blank -%}
+    <div class="announcement-bar" role="status">{{ settings.announcement_text }}</div>
+  {%- endif -%}
+  {%- section 'header' -%}
+  <main id="MainContent" role="main" tabindex="-1">
+    {{ content_for_layout }}
+  </main>
+  {%- section 'newsletter' -%}
+  {%- section 'footer' -%}
+  {{ 'wildplain.js' | asset_url | script_tag }}
+</body>
+</html>
